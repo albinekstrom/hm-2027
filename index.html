@@ -6,39 +6,85 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'">
 <meta name="theme-color" content="#EDF2F5">
 <title>Half marathon · 22 May 2027</title>
-<style>
-  :root{
-    --ice:#E9EEF1; --panel:#FBFCFD; --ink:#15242C; --slate:#4C6070; --mute:#7A8D99;
-    --line:#CBD8DF; --frost:#2C6C8C;
-    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
-    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  *{box-sizing:border-box}
-  body{
-    margin:0;background:var(--ice);color:var(--ink);font-family:var(--sans);
-    font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
-    padding:env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom));
-  }
-  .wrap{max-width:1080px;margin:0 auto;padding-top:28px}
-  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
-  h1{font-family:var(--mono);font-size:clamp(22px,4.4vw,34px);font-weight:600;letter-spacing:-.01em;line-height:1.1;margin:0 0 20px}
-  h1 span{color:var(--frost)}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
-  .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-  .val{font-family:var(--mono);font-size:30px;font-weight:600;line-height:1.2}
-  p{margin:10px 0 0;color:var(--slate);font-size:14px}
-</style>
+<link rel="stylesheet" href="css/app.css">
 </head>
 <body>
-<div class="wrap">
-  <p class="eyebrow">40-week build · Stockholm · Aug 2026 – May 2027</p>
-  <h1>Half marathon, 22 May 2027<br><span>Target 1:20 · shins first</span></h1>
-  <div class="card">
-    <div class="lab">Days to race</div>
-    <div class="val" id="days">—</div>
-    <p>Deploy check — phase 1 of 5. The plan, the ledger and the log arrive in phase 2.</p>
+
+<header class="head">
+  <div class="wrap">
+    <p class="eyebrow">40-week build · Stockholm · Aug 2026 – May 2027</p>
+    <h1>Half marathon, 22 May 2027<br><span>Target 1:20 · shins first</span></h1>
+    <div class="gauges">
+      <div class="gauge">
+        <div class="lab">Days to race</div>
+        <div class="val" id="g-days">—</div>
+        <div class="sub" id="g-date">Sat 22 May 2027</div>
+      </div>
+      <div class="gauge">
+        <div class="lab">Week</div>
+        <div class="val" id="g-week">—</div>
+        <div class="sub" id="g-phase">—</div>
+      </div>
+      <div class="gauge">
+        <div class="lab">This week</div>
+        <div class="val" id="g-km">—</div>
+        <div class="sub" id="g-kmsub">planned volume</div>
+      </div>
+      <div class="gauge">
+        <div class="lab">Logged / planned</div>
+        <div class="val" id="g-total">—</div>
+        <div class="sub">km so far</div>
+      </div>
+      <div class="gauge">
+        <div class="lab">Shin status</div>
+        <div class="val" id="g-shin">—</div>
+        <div class="sub" id="g-shinsub">last 3 weeks</div>
+      </div>
+    </div>
   </div>
-</div>
+</header>
+
+<main class="wrap">
+
+  <section class="ledger" aria-labelledby="ledger-title">
+    <div class="ledger-head">
+      <h2 class="ledger-title" id="ledger-title">Load &amp; tolerance ledger — bar height = planned km, fill = logged, square = shin signal</h2>
+      <div class="legend">
+        <span><i class="sw-moss"></i>clear</span>
+        <span><i class="sw-amber"></i>niggle</span>
+        <span><i class="sw-signal"></i>stop</span>
+        <span><i class="sw-none"></i>not logged</span>
+      </div>
+    </div>
+    <div class="stripscroll">
+      <div class="strip" id="strip" role="group" aria-label="40 week load ledger"></div>
+      <div class="phaserail" id="phaserail" aria-hidden="true"></div>
+    </div>
+    <div class="phasekeys">
+      <span><i class="sw-p0"></i>1–6 Rebuild</span>
+      <span><i class="sw-p1"></i>7–18 Base &amp; form</span>
+      <span><i class="sw-p2"></i>19–28 Winter threshold</span>
+      <span><i class="sw-p3"></i>29–36 Race specific</span>
+      <span><i class="sw-p4"></i>37–40 Sharpen &amp; taper</span>
+    </div>
+  </section>
+
+  <nav class="tabs" id="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" id="tab-week" data-tab="week" aria-controls="p-week" aria-selected="true">The week</button>
+    <button class="tab" role="tab" id="tab-season" data-tab="season" aria-controls="p-season" aria-selected="false">Season</button>
+    <button class="tab" role="tab" id="tab-paces" data-tab="paces" aria-controls="p-paces" aria-selected="false">Paces</button>
+    <button class="tab" role="tab" id="tab-playbook" data-tab="playbook" aria-controls="p-playbook" aria-selected="false">Playbook</button>
+  </nav>
+
+  <div class="panel" id="p-week" role="tabpanel" aria-labelledby="tab-week" tabindex="0"></div>
+  <div class="panel" id="p-season" role="tabpanel" aria-labelledby="tab-season" tabindex="0" hidden></div>
+  <div class="panel" id="p-paces" role="tabpanel" aria-labelledby="tab-paces" tabindex="0" hidden></div>
+  <div class="panel" id="p-playbook" role="tabpanel" aria-labelledby="tab-playbook" tabindex="0" hidden></div>
+
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script type="module" src="js/app.js"></script>
 </body>
 </html>

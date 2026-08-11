@@ -1,0 +1,375 @@
+/* ============================================================
+   Half marathon 2027 — cool Nordic instrument panel.
+   Palette and type are taken from reference-ui.html unchanged.
+   ============================================================ */
+
+:root{
+  --ice:#E9EEF1;
+  --panel:#FBFCFD;
+  --ink:#15242C;
+  --slate:#4C6070;
+  --mute:#7A8D99;
+  --line:#CBD8DF;
+  --line2:#E1E9ED;
+  --frost:#2C6C8C;
+  --glacier:#8FB9CC;
+  --moss:#3F7A52;
+  --amber:#B87514;
+  --signal:#A93526;
+  --p0:#8FB9CC;
+  --p1:#2C6C8C;
+  --p2:#4B5C86;
+  --p3:#8A5A86;
+  --p4:#A93526;
+  --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --tabbar:0px; /* raised to the bottom bar's height on narrow screens */
+}
+
+*{box-sizing:border-box}
+
+html{background:var(--ice)}
+
+body{
+  margin:0;
+  background:var(--ice);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:15px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;
+  padding-bottom:calc(60px + var(--tabbar) + env(safe-area-inset-bottom));
+}
+
+.wrap{
+  max-width:1080px;
+  margin:0 auto;
+  padding:0 max(16px, env(safe-area-inset-left)) 0 max(16px, env(safe-area-inset-right));
+}
+
+/* ---------- instrument header ---------- */
+.head{
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,#F4F8FA,#E9EEF1);
+  padding:calc(22px + env(safe-area-inset-top)) 0 0;
+}
+.eyebrow{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mute);margin:0 0 6px;
+}
+h1{
+  font-family:var(--mono);
+  font-size:clamp(22px,4.4vw,34px);
+  font-weight:600;letter-spacing:-.01em;line-height:1.1;margin:0 0 14px;
+}
+h1 span{color:var(--frost)}
+
+.gauges{display:flex;flex-wrap:wrap;gap:0;border-top:1px solid var(--line2);margin-top:6px}
+.gauge{flex:1 1 120px;padding:12px 14px 14px;border-right:1px solid var(--line2)}
+.gauge:last-child{border-right:0}
+.lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.gauge .val{font-family:var(--mono);font-size:20px;font-weight:600;margin-top:2px}
+.gauge .sub{font-size:12px;color:var(--slate)}
+
+/* ---------- signature: load & tolerance ledger ---------- */
+.ledger{padding:18px 0 8px}
+.ledger-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.ledger-title{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--slate);margin:0;
+}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--mute)}
+.legend i,.phasekeys i{display:inline-block;border-radius:2px}
+.legend i{width:8px;height:8px;margin-right:5px;vertical-align:1px}
+.sw-moss{background:var(--moss)}
+.sw-amber{background:var(--amber)}
+.sw-signal{background:var(--signal)}
+.sw-none{background:var(--line2)}
+.sw-p0{background:var(--p0)}
+.sw-p1{background:var(--p1)}
+.sw-p2{background:var(--p2)}
+.sw-p3{background:var(--p3)}
+.sw-p4{background:var(--p4)}
+
+/* The bars never shrink below 10px; the ledger scrolls instead. Bars and
+   phase rail share one scroll container so they can never drift apart. */
+.stripscroll{
+  overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:thin;
+  -webkit-overflow-scrolling:touch;
+  padding-bottom:2px;
+}
+.strip{
+  display:flex;gap:2px;align-items:flex-end;
+  height:120px;min-width:100%;
+}
+.bar{
+  flex:1 0 10px;min-width:10px;position:relative;height:100%;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  background:none;border:0;padding:0;cursor:pointer;
+  -webkit-tap-highlight-color:transparent;
+}
+.bar .plan{
+  width:100%;background:var(--line);border-radius:2px 2px 0 0;position:relative;overflow:hidden;
+  transition:background .15s;
+}
+.bar .done{position:absolute;left:0;right:0;bottom:0;background:var(--frost);transition:height .3s ease}
+.bar[data-phase="P0"] .plan{background:#D3DFE5}
+.bar.sel .plan{outline:2px solid var(--ink);outline-offset:1px}
+.bar .dot{height:5px;margin-top:3px;border-radius:1px;background:var(--line2)}
+.bar:focus-visible{outline:2px solid var(--frost);outline-offset:2px}
+
+.phaserail{display:flex;gap:2px;margin-top:4px;min-width:100%}
+.phaserail div{flex:1 0 10px;min-width:10px;height:3px;border-radius:1px}
+.phasekeys{
+  display:flex;gap:12px;flex-wrap:wrap;margin-top:10px;
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);
+}
+.phasekeys i{width:14px;height:3px;margin-right:5px;vertical-align:3px;border-radius:1px}
+
+/* ---------- tabs ---------- */
+.tabs{display:flex;gap:2px;margin:22px 0 0;border-bottom:1px solid var(--line);overflow-x:auto}
+.tab{
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+  background:none;border:0;border-bottom:2px solid transparent;
+  padding:10px 14px;color:var(--mute);cursor:pointer;white-space:nowrap;
+}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--frost)}
+.tab:focus-visible{outline:2px solid var(--frost);outline-offset:-2px}
+.panel{padding:22px 0 0}
+.panel[hidden]{display:none}
+.panel:focus{outline:none}
+
+/* ---------- cards ---------- */
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:4px;
+  padding:16px 18px;margin-bottom:14px;
+}
+.card h3{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--slate);margin:0 0 10px;font-weight:600;
+}
+.card h4{font-size:15px;margin:16px 0 6px}
+.card p{margin:0 0 10px}
+.card p:last-child{margin-bottom:0}
+
+/* ---------- week detail ---------- */
+.wkhead{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.wknum{font-family:var(--mono);font-size:26px;font-weight:600;line-height:1}
+.wkdate{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:4px}
+.wkbrief{color:var(--slate);font-size:14px;margin-top:8px}
+.wkfacts{
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:10px;
+  font-family:var(--mono);font-size:12px;color:var(--slate);
+}
+.pill{
+  font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+  padding:3px 8px;border-radius:99px;border:1px solid var(--line);color:var(--slate);background:#fff;
+  cursor:pointer;
+}
+.pill.on{background:var(--amber);border-color:var(--amber);color:#fff}
+.pill:focus-visible{outline:2px solid var(--frost);outline-offset:2px}
+.phasetag{
+  font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  padding:2px 6px;border-radius:2px;color:#fff;
+}
+.keybox{
+  border-left:3px solid var(--frost);background:#F1F6F9;padding:10px 12px;margin:12px 0 0;
+  font-size:14px;
+}
+.keybox b{
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--frost);display:block;margin-bottom:3px;
+}
+.keybox.second{border-left-color:var(--p3)}
+.keybox.second b{color:var(--p3)}
+
+/* ---------- session list ----------
+   One markup, two shapes: a row of columns on a desktop panel,
+   a stacked card with big controls under 600px.                     */
+.sesshead,.srow{
+  display:grid;
+  grid-template-columns:44px 54px 1fr 88px 132px;
+  gap:8px;align-items:start;
+}
+.sesshead{
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  padding:0 0 6px;border-bottom:1px solid var(--line);
+}
+.srow{padding:10px 0;border-bottom:1px solid var(--line2)}
+.srow:last-child{border-bottom:0}
+.srow.rest{color:var(--mute)}
+.srow.rest .stitle{font-weight:600;color:var(--slate)}
+.srow.done{background:#F4F8FA}
+.day{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate);white-space:nowrap;padding-top:2px}
+.stitle{font-weight:600;font-size:14px}
+.splan{color:var(--mute);font-family:var(--mono);font-size:12px;font-weight:400}
+.sdetail{font-size:13px;color:var(--slate)}
+.sctl{display:contents}
+
+input[type=checkbox]{
+  width:22px;height:22px;margin:0;accent-color:var(--frost);
+}
+.check{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:44px;height:44px;margin:-11px 0 0 -11px;cursor:pointer;
+}
+.kmbox,select,input[type=text]{
+  font-family:var(--mono);font-size:14px;padding:6px 8px;
+  border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--ink);
+}
+.kmbox{width:100%;text-align:right}
+select{width:100%}
+.kmbox:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible{
+  outline:2px solid var(--frost);outline-offset:1px;
+}
+textarea{
+  width:100%;font-family:var(--sans);font-size:15px;padding:8px;border:1px solid var(--line);
+  border-radius:3px;background:#fff;color:var(--ink);min-height:72px;resize:vertical;
+}
+.btn{
+  font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--ink);color:#fff;border:0;border-radius:3px;padding:11px 16px;cursor:pointer;
+  min-height:44px;
+}
+.btn.ghost{background:#fff;color:var(--slate);border:1px solid var(--line)}
+.btn.danger{background:#fff;color:var(--signal);border:1px solid var(--signal)}
+.btn:focus-visible{outline:2px solid var(--frost);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* ---------- shin signal ---------- */
+.painsel{font-family:var(--mono);font-size:14px}
+.pain0{color:var(--moss)}
+.pain1{color:var(--amber)}
+.pain2,.pain3{color:var(--signal)}
+.verdict{border-radius:4px;padding:12px 14px;margin-top:14px;font-size:14px;border:1px solid}
+.verdict.g{background:#F0F6F1;border-color:#C3DBC9}
+.verdict.a{background:#FBF3E6;border-color:#EBD6AE}
+.verdict.r{background:#FBEDEB;border-color:#E8C0BA}
+.verdict b{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+
+/* ---------- season table ---------- */
+.seasonwrap{overflow-x:auto}
+table.season{width:100%;border-collapse:collapse;font-size:13px}
+table.season th{
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);
+  position:sticky;top:0;background:var(--panel);
+}
+table.season td{padding:10px 8px;border-bottom:1px solid var(--line2)}
+table.season tr[data-i]{cursor:pointer}
+table.season tr[data-i]:hover td{background:#F1F6F9}
+table.season tr.now td{background:#EDF4F7;box-shadow:inset 3px 0 0 var(--frost)}
+table.season tr[data-i]:focus-visible{outline:2px solid var(--frost);outline-offset:-2px}
+.num{font-family:var(--mono);font-size:13px;text-align:right}
+.travelflag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.testflag{font-family:var(--mono);font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--frost)}
+
+/* ---------- paces ---------- */
+table.pace{width:100%;border-collapse:collapse;font-size:14px}
+table.pace th{
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);
+}
+table.pace td{padding:9px 8px;border-bottom:1px solid var(--line2)}
+table.pace td.p{font-family:var(--mono);font-weight:600}
+.big{font-family:var(--mono);font-size:30px;font-weight:600;line-height:1.1}
+.cmp{display:flex;gap:22px;flex-wrap:wrap;margin:6px 0 2px}
+.note{font-size:13px;color:var(--slate);margin-top:14px}
+
+/* ---------- playbook ---------- */
+.pb h4{font-family:var(--sans);font-size:16px;margin:18px 0 6px}
+.pb h4:first-child{margin-top:0}
+.pb ul{margin:0 0 12px;padding-left:20px}
+.pb li{margin-bottom:6px}
+.pb .src{font-size:12px;color:var(--mute);font-style:italic}
+.pb table{width:100%;border-collapse:collapse;font-size:14px;margin:0 0 12px}
+.pb th{
+  font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);
+  text-align:left;padding:6px 8px;border-bottom:1px solid var(--line);
+}
+.pb td{padding:8px;border-bottom:1px solid var(--line2);vertical-align:top}
+.tl{border-left:3px solid;padding:8px 0 8px 12px;margin:0 0 12px}
+.tl.g{border-color:var(--moss)}
+.tl.a{border-color:var(--amber)}
+.tl.r{border-color:var(--signal)}
+.tl b{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+
+/* ---------- toast ---------- */
+.toast{
+  position:fixed;left:50%;transform:translateX(-50%);
+  bottom:calc(20px + var(--tabbar) + env(safe-area-inset-bottom));
+  background:var(--ink);color:#fff;font-family:var(--mono);font-size:12px;
+  padding:9px 16px;border-radius:3px;opacity:0;transition:opacity .25s;pointer-events:none;z-index:50;
+  max-width:calc(100vw - 32px);text-align:center;
+}
+.toast.show{opacity:1}
+
+/* ============================================================
+   Narrow screens: one thumb, cold hands, 360 px.
+   ============================================================ */
+@media (max-width:600px){
+  :root{--tabbar:56px}
+
+  .gauge{flex:1 1 50%;border-right:1px solid var(--line2)}
+  .gauge:nth-child(2n){border-right:0}
+  .gauges{border-bottom:0}
+
+  /* Tabs move to a fixed bottom bar, reachable with one thumb. */
+  .tabs{
+    position:fixed;left:0;right:0;bottom:0;z-index:40;
+    margin:0;border-bottom:0;border-top:1px solid var(--line);
+    background:var(--panel);
+    padding:0 max(0px, env(safe-area-inset-left)) env(safe-area-inset-bottom) max(0px, env(safe-area-inset-right));
+    overflow-x:visible;
+    box-shadow:0 -2px 8px rgba(21,36,44,.06);
+  }
+  .tab{
+    flex:1 1 0;min-width:0;min-height:56px;padding:8px 4px;font-size:10px;letter-spacing:.06em;
+    border-bottom:0;border-top:2px solid transparent;
+  }
+  .tab[aria-selected="true"]{border-top-color:var(--frost);background:#F1F6F9}
+  .panel{padding-top:18px}
+
+  /* Session rows become stacked cards with big controls. */
+  .sesshead{display:none}
+  .srow{
+    display:block;padding:12px;margin-bottom:10px;
+    border:1px solid var(--line);border-bottom:1px solid var(--line);border-radius:4px;background:#fff;
+  }
+  .srow:last-child{border-bottom:1px solid var(--line)}
+  .srow.done{background:#F4F8FA;border-color:var(--glacier)}
+  .srow.rest{background:transparent;border-style:dashed}
+  .srow .day{padding-top:0}
+  .stitle{margin-top:2px;font-size:15px}
+  .sdetail{margin-top:4px}
+  .sctl{
+    display:flex;align-items:center;gap:12px;margin-top:12px;
+    padding-top:10px;border-top:1px solid var(--line2);
+  }
+  .sctl .check{margin:0;flex:0 0 44px}
+  .sctl .kmfield{flex:0 0 96px}
+  .sctl .painfield{flex:1 1 auto;min-width:0}
+  .kmbox,select,input[type=text],.painsel{
+    /* 16px keeps iOS Safari from zooming the viewport on focus */
+    font-size:16px;min-height:44px;
+  }
+  .fieldlab{
+    display:block;font-family:var(--mono);font-size:9px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--mute);margin-bottom:3px;
+  }
+  .wknum{font-size:22px}
+  .card{padding:14px}
+  table.season td{padding:12px 8px}
+}
+
+/* Wide screens do not need the per-control labels; the header row has them. */
+@media (min-width:601px){
+  .fieldlab{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .strip{scroll-behavior:auto}
+}
