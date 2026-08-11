@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://api.github.com; img-src 'self' data:; style-src 'self' 'unsafe-inline'">
+<meta name="theme-color" content="#EDF2F5">
+<title>Half marathon · 22 May 2027</title>
+<style>
+  :root{
+    --ice:#E9EEF1; --panel:#FBFCFD; --ink:#15242C; --slate:#4C6070; --mute:#7A8D99;
+    --line:#CBD8DF; --frost:#2C6C8C;
+    --mono:ui-monospace,"SF Mono","Cascadia Mono","Roboto Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;background:var(--ice);color:var(--ink);font-family:var(--sans);
+    font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased;
+    padding:env(safe-area-inset-top) 16px calc(24px + env(safe-area-inset-bottom));
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding-top:28px}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 6px}
+  h1{font-family:var(--mono);font-size:clamp(22px,4.4vw,34px);font-weight:600;letter-spacing:-.01em;line-height:1.1;margin:0 0 20px}
+  h1 span{color:var(--frost)}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px 18px}
+  .lab{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+  .val{font-family:var(--mono);font-size:30px;font-weight:600;line-height:1.2}
+  p{margin:10px 0 0;color:var(--slate);font-size:14px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="eyebrow">40-week build · Stockholm · Aug 2026 – May 2027</p>
+  <h1>Half marathon, 22 May 2027<br><span>Target 1:20 · shins first</span></h1>
+  <div class="card">
+    <div class="lab">Days to race</div>
+    <div class="val" id="days">—</div>
+    <p>Deploy check — phase 1 of 5. The plan, the ledger and the log arrive in phase 2.</p>
+  </div>
+</div>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

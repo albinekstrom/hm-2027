@@ -1,0 +1,3004 @@
+{
+  "meta": {
+    "title": "Half marathon build 2026-2027",
+    "raceName": "Half marathon",
+    "raceDate": "2027-05-22",
+    "weekOneMonday": "2026-08-17",
+    "totalWeeks": 40,
+    "goals": {
+      "A": {
+        "time": "1:20:00",
+        "paceKm": "3:47"
+      },
+      "B": {
+        "time": "1:22:00-1:24:00"
+      },
+      "C": {
+        "time": "1:25:00",
+        "note": "equals 2019 PB 1:25:18"
+      }
+    },
+    "pb": {
+      "half": "1:25:18",
+      "year": 2019
+    },
+    "peakWeeklyKm": 72,
+    "totalPlannedKm": 1993,
+    "escalationClause": "If weeks 1-24 are all logged green with no amber since December, add 5% to weeks 27-35 (peak ~78 km). Otherwise do not."
+  },
+  "phases": [
+    {
+      "id": "P0",
+      "name": "Rebuild",
+      "from": 1,
+      "to": 6,
+      "brief": "Frequency and bone load before speed. Nothing faster than relaxed strides."
+    },
+    {
+      "id": "P1",
+      "name": "Base & form",
+      "from": 7,
+      "to": 18,
+      "brief": "Volume up, threshold introduced as short cruise intervals, cadence retraining."
+    },
+    {
+      "id": "P2",
+      "name": "Winter threshold",
+      "from": 19,
+      "to": 28,
+      "brief": "Pyramidal block. Big easy base, real threshold volume, heavy strength, hills."
+    },
+    {
+      "id": "P3",
+      "name": "Race specific",
+      "from": 29,
+      "to": 36,
+      "brief": "Shift polarized: VO2 intervals plus long blocks at goal half pace."
+    },
+    {
+      "id": "P4",
+      "name": "Sharpen & taper",
+      "from": 37,
+      "to": 40,
+      "brief": "Cut volume hard, keep intensity. No hockey or floorball in the last three weeks."
+    }
+  ],
+  "zones": [
+    {
+      "n": "Easy / recovery",
+      "lo": 0.685,
+      "hi": 0.755,
+      "use": "Every run that is not the key session. Most of your week lives here."
+    },
+    {
+      "n": "Long run",
+      "lo": 0.7,
+      "hi": 0.775,
+      "use": "Long runs, drifting to the faster end late in the run."
+    },
+    {
+      "n": "Marathon effort",
+      "lo": 0.885,
+      "hi": 0.905,
+      "use": "Rare. Long steady blocks in winter."
+    },
+    {
+      "n": "Threshold",
+      "lo": 0.93,
+      "hi": 0.945,
+      "use": "Cruise intervals and continuous tempo. The engine of this plan."
+    },
+    {
+      "n": "Half-marathon pace",
+      "lo": 0.95,
+      "hi": 0.965,
+      "use": "Goal-pace blocks from week 29."
+    },
+    {
+      "n": "5 km / VO2 interval",
+      "lo": 1.02,
+      "hi": 1.04,
+      "use": "3-5 min reps in the specific phase."
+    },
+    {
+      "n": "Strides / reps",
+      "lo": 1.09,
+      "hi": 1.13,
+      "use": "20 s strides, 200-400 m reps. Form, not lungs."
+    }
+  ],
+  "travelWeekSessions": [
+    {
+      "id": "t0",
+      "day": "Any",
+      "kind": "key",
+      "title": "Keep the intensity",
+      "detail": "8 × 2 min hard / 1 min easy, or the week's key session shortened by half. Treadmill is fine.",
+      "km": 8
+    },
+    {
+      "id": "t1",
+      "day": "Any",
+      "kind": "easy",
+      "title": "One longer easy run",
+      "detail": "40–60 min easy, whatever the city gives you.",
+      "km": 9
+    },
+    {
+      "id": "t2",
+      "day": "Any",
+      "kind": "easy",
+      "title": "Optional third run",
+      "detail": "30 min easy if the schedule opens up. Nice to have, not required.",
+      "km": 6
+    },
+    {
+      "id": "t3",
+      "day": "Any",
+      "kind": "strength",
+      "title": "Hotel strength × 2",
+      "detail": "10 min: single-leg calf raises 3×15 each, split squats 3×10, pogo hops 3×20, side plank. No equipment needed.",
+      "km": 0
+    }
+  ],
+  "travelWeekVolumeFactor": 0.45,
+  "testWeeks": [
+    6,
+    13,
+    18,
+    28,
+    33,
+    36
+  ],
+  "downWeeks": [
+    4,
+    10,
+    16,
+    23,
+    26,
+    31,
+    36
+  ],
+  "weeks": [
+    {
+      "week": 1,
+      "phase": "P0",
+      "start": "2026-08-17",
+      "end": "2026-08-23",
+      "targetKm": 24,
+      "longKm": 10,
+      "longNote": null,
+      "keySession": "6 × 20 s strides on grass or soft gravel, walk back full recovery. Inside an easy run.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w1-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 7
+        },
+        {
+          "id": "w1-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "6 × 20 s strides on grass or soft gravel, walk back full recovery. Inside an easy run.",
+          "km": 7
+        },
+        {
+          "id": "w1-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w1-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work only.",
+          "km": 0
+        },
+        {
+          "id": "w1-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w1-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "10 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 10
+        },
+        {
+          "id": "w1-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "phase": "P0",
+      "start": "2026-08-24",
+      "end": "2026-08-30",
+      "targetKm": 27,
+      "longKm": 11,
+      "longNote": null,
+      "keySession": "8 × 20 s strides on soft surface. Relaxed and tall, not a sprint.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w2-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 8
+        },
+        {
+          "id": "w2-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "8 × 20 s strides on soft surface. Relaxed and tall, not a sprint.",
+          "km": 8
+        },
+        {
+          "id": "w2-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w2-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work only.",
+          "km": 0
+        },
+        {
+          "id": "w2-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w2-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "11 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 11
+        },
+        {
+          "id": "w2-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "phase": "P0",
+      "start": "2026-08-31",
+      "end": "2026-09-06",
+      "targetKm": 30,
+      "longKm": 12,
+      "longNote": null,
+      "keySession": "8 × 20 s strides + 4 × 30 s uphill at controlled effort, walk down.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w3-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "5 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 5
+        },
+        {
+          "id": "w3-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "8 × 20 s strides + 4 × 30 s uphill at controlled effort, walk down.",
+          "km": 8
+        },
+        {
+          "id": "w3-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w3-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + easy run",
+          "detail": "5 km easy. Include 10 min at target cadence, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w3-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w3-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "12 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 12
+        },
+        {
+          "id": "w3-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "phase": "P0",
+      "start": "2026-09-07",
+      "end": "2026-09-13",
+      "targetKm": 24,
+      "longKm": 10,
+      "longNote": null,
+      "keySession": "Down week: 6 × 20 s strides only. Nothing else hard.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w4-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 7
+        },
+        {
+          "id": "w4-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 6 × 20 s strides only. Nothing else hard.",
+          "km": 7
+        },
+        {
+          "id": "w4-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w4-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work only.",
+          "km": 0
+        },
+        {
+          "id": "w4-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w4-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "10 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 10
+        },
+        {
+          "id": "w4-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "phase": "P0",
+      "start": "2026-09-14",
+      "end": "2026-09-20",
+      "targetKm": 33,
+      "longKm": 13,
+      "longNote": null,
+      "keySession": "10 × 20 s strides + 5 × 30 s uphill. Still no sustained fast running.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w5-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 6
+        },
+        {
+          "id": "w5-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "10 × 20 s strides + 5 × 30 s uphill. Still no sustained fast running.",
+          "km": 9
+        },
+        {
+          "id": "w5-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w5-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + easy run",
+          "detail": "5 km easy. Include 10 min at target cadence, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w5-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w5-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "13 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 13
+        },
+        {
+          "id": "w5-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "phase": "P0",
+      "start": "2026-09-21",
+      "end": "2026-09-27",
+      "targetKm": 30,
+      "longKm": 12,
+      "longNote": null,
+      "keySession": "TEST: 3 km time trial, flat, fresh legs. This sets every pace in the plan.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": true,
+      "sessions": [
+        {
+          "id": "w6-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "5 km easy. Then heavy lower body — lift after the run, never before.",
+          "km": 5
+        },
+        {
+          "id": "w6-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "TEST: 3 km time trial, flat, fresh legs. This sets every pace in the plan.",
+          "km": 8
+        },
+        {
+          "id": "w6-2",
+          "day": "Wed",
+          "kind": "rest",
+          "title": "Rest or walk",
+          "detail": "Off running. Calf and foot work if you feel like it.",
+          "km": 0
+        },
+        {
+          "id": "w6-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + easy run",
+          "detail": "5 km easy. Include 10 min at target cadence, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w6-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Nothing. This is where the bone adapts.",
+          "km": 0
+        },
+        {
+          "id": "w6-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "12 km fully easy. Conversation pace the whole way, soft surface if you can.",
+          "km": 12
+        },
+        {
+          "id": "w6-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest",
+          "detail": "Off running. Floorball 17–18 from September.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "phase": "P1",
+      "start": "2026-09-28",
+      "end": "2026-10-04",
+      "targetKm": 36,
+      "longKm": 13,
+      "longNote": null,
+      "keySession": "5 × 3 min at threshold, 90 s jog between. 15 min of work total.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w7-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w7-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 3 min at threshold, 90 s jog between. 15 min of work total.",
+          "km": 11
+        },
+        {
+          "id": "w7-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w7-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work.",
+          "km": 0
+        },
+        {
+          "id": "w7-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w7-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "13 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 13
+        },
+        {
+          "id": "w7-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "phase": "P1",
+      "start": "2026-10-05",
+      "end": "2026-10-11",
+      "targetKm": 39,
+      "longKm": 14,
+      "longNote": null,
+      "keySession": "5 × 4 min at threshold, 90 s jog. 20 min of work.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w8-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w8-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 4 min at threshold, 90 s jog. 20 min of work.",
+          "km": 11
+        },
+        {
+          "id": "w8-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w8-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work.",
+          "km": 0
+        },
+        {
+          "id": "w8-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w8-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "14 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 14
+        },
+        {
+          "id": "w8-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "phase": "P1",
+      "start": "2026-10-12",
+      "end": "2026-10-18",
+      "targetKm": 42,
+      "longKm": 15,
+      "longNote": null,
+      "keySession": "6 × 4 min at threshold, 90 s jog. 24 min of work.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w9-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w9-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "6 × 4 min at threshold, 90 s jog. 24 min of work.",
+          "km": 11
+        },
+        {
+          "id": "w9-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w9-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w9-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w9-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "15 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 15
+        },
+        {
+          "id": "w9-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "phase": "P1",
+      "start": "2026-10-19",
+      "end": "2026-10-25",
+      "targetKm": 33,
+      "longKm": 12,
+      "longNote": null,
+      "keySession": "Down week: 3 × 5 min at threshold, 2 min jog.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w10-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "5 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 5
+        },
+        {
+          "id": "w10-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 3 × 5 min at threshold, 2 min jog.",
+          "km": 11
+        },
+        {
+          "id": "w10-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w10-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B",
+          "detail": "No run. Calves, hops and single-leg work.",
+          "km": 0
+        },
+        {
+          "id": "w10-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w10-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "12 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 12
+        },
+        {
+          "id": "w10-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "phase": "P1",
+      "start": "2026-10-26",
+      "end": "2026-11-01",
+      "targetKm": 45,
+      "longKm": 16,
+      "longNote": null,
+      "keySession": "4 × 6 min at threshold, 2 min jog.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w11-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w11-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "4 × 6 min at threshold, 2 min jog.",
+          "km": 11
+        },
+        {
+          "id": "w11-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w11-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w11-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w11-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "16 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 16
+        },
+        {
+          "id": "w11-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "phase": "P1",
+      "start": "2026-11-02",
+      "end": "2026-11-08",
+      "targetKm": 48,
+      "longKm": 16,
+      "longNote": null,
+      "keySession": "2 × 12 min at threshold, 3 min jog. First long continuous efforts.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w12-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w12-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "2 × 12 min at threshold, 3 min jog. First long continuous efforts.",
+          "km": 11
+        },
+        {
+          "id": "w12-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w12-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w12-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w12-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "16 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 16
+        },
+        {
+          "id": "w12-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "phase": "P1",
+      "start": "2026-11-09",
+      "end": "2026-11-15",
+      "targetKm": 42,
+      "longKm": 13,
+      "longNote": null,
+      "keySession": "TEST: 5 km time trial or a parkrun. Update your paces afterwards.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": true,
+      "sessions": [
+        {
+          "id": "w13-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w13-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "TEST: 5 km time trial or a parkrun. Update your paces afterwards.",
+          "km": 11
+        },
+        {
+          "id": "w13-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w13-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w13-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w13-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "13 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 13
+        },
+        {
+          "id": "w13-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "phase": "P1",
+      "start": "2026-11-16",
+      "end": "2026-11-22",
+      "targetKm": 51,
+      "longKm": 17,
+      "longNote": null,
+      "keySession": "20 min continuous at threshold + 6 × 20 s strides.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w14-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w14-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "20 min continuous at threshold + 6 × 20 s strides.",
+          "km": 11
+        },
+        {
+          "id": "w14-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w14-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w14-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w14-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "17 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 17
+        },
+        {
+          "id": "w14-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "phase": "P1",
+      "start": "2026-11-23",
+      "end": "2026-11-29",
+      "targetKm": 54,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "3 × 8 min at threshold, 2 min jog + 4 × 30 s hill.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w15-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w15-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "3 × 8 min at threshold, 2 min jog + 4 × 30 s hill.",
+          "km": 11
+        },
+        {
+          "id": "w15-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w15-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w15-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w15-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w15-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "3 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 3
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "phase": "P1",
+      "start": "2026-11-30",
+      "end": "2026-12-06",
+      "targetKm": 44,
+      "longKm": 15,
+      "longNote": null,
+      "keySession": "Down week: 2 × 10 min at threshold.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w16-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w16-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 2 × 10 min at threshold.",
+          "km": 11
+        },
+        {
+          "id": "w16-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w16-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w16-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w16-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "15 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 15
+        },
+        {
+          "id": "w16-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "phase": "P1",
+      "start": "2026-12-07",
+      "end": "2026-12-13",
+      "targetKm": 55,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "25 min continuous at threshold. Biggest single threshold effort so far.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w17-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w17-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "25 min continuous at threshold. Biggest single threshold effort so far.",
+          "km": 11
+        },
+        {
+          "id": "w17-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w17-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w17-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w17-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w17-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "phase": "P1",
+      "start": "2026-12-14",
+      "end": "2026-12-20",
+      "targetKm": 48,
+      "longKm": 16,
+      "longNote": null,
+      "keySession": "5 km race or hard 5 km effort, then two genuinely easy days.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w18-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w18-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 km race or hard 5 km effort, then two genuinely easy days.",
+          "km": 11
+        },
+        {
+          "id": "w18-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w18-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w18-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w18-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "16 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 16
+        },
+        {
+          "id": "w18-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 19,
+      "phase": "P2",
+      "start": "2026-12-21",
+      "end": "2026-12-27",
+      "targetKm": 50,
+      "longKm": 17,
+      "longNote": null,
+      "keySession": "6 × 3 min uphill, strong but controlled, jog down. Low impact, high stimulus.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w19-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w19-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "6 × 3 min uphill, strong but controlled, jog down. Low impact, high stimulus.",
+          "km": 13
+        },
+        {
+          "id": "w19-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w19-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w19-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w19-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "17 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 17
+        },
+        {
+          "id": "w19-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 20,
+      "phase": "P2",
+      "start": "2026-12-28",
+      "end": "2027-01-03",
+      "targetKm": 42,
+      "longKm": 14,
+      "longNote": null,
+      "keySession": "Travel-proof: 8 × 1 min hard / 1 min easy. Treadmill, road, anywhere.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w20-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "5 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 5
+        },
+        {
+          "id": "w20-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Travel-proof: 8 × 1 min hard / 1 min easy. Treadmill, road, anywhere.",
+          "km": 13
+        },
+        {
+          "id": "w20-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w20-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w20-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w20-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "14 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 14
+        },
+        {
+          "id": "w20-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 21,
+      "phase": "P2",
+      "start": "2027-01-04",
+      "end": "2027-01-10",
+      "targetKm": 55,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "3 × 10 min at threshold, 2 min jog.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w21-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w21-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "3 × 10 min at threshold, 2 min jog.",
+          "km": 13
+        },
+        {
+          "id": "w21-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w21-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w21-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w21-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w21-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 22,
+      "phase": "P2",
+      "start": "2027-01-11",
+      "end": "2027-01-17",
+      "targetKm": 58,
+      "longKm": 19,
+      "longNote": null,
+      "keySession": "20 min + 10 min at threshold, 3 min jog between.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w22-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w22-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "20 min + 10 min at threshold, 3 min jog between.",
+          "km": 13
+        },
+        {
+          "id": "w22-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w22-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w22-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w22-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "19 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 19
+        },
+        {
+          "id": "w22-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 23,
+      "phase": "P2",
+      "start": "2027-01-18",
+      "end": "2027-01-24",
+      "targetKm": 48,
+      "longKm": 16,
+      "longNote": null,
+      "keySession": "Down week: 8 × 2 min at threshold, 1 min jog.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w23-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w23-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 8 × 2 min at threshold, 1 min jog.",
+          "km": 13
+        },
+        {
+          "id": "w23-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w23-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w23-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w23-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "16 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 16
+        },
+        {
+          "id": "w23-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 24,
+      "phase": "P2",
+      "start": "2027-01-25",
+      "end": "2027-01-31",
+      "targetKm": 60,
+      "longKm": 20,
+      "longNote": null,
+      "keySession": "4 × 10 min at threshold, 2 min jog. 40 min of threshold in one session.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w24-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w24-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "4 × 10 min at threshold, 2 min jog. 40 min of threshold in one session.",
+          "km": 13
+        },
+        {
+          "id": "w24-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w24-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w24-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w24-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "20 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 20
+        },
+        {
+          "id": "w24-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 25,
+      "phase": "P2",
+      "start": "2027-02-01",
+      "end": "2027-02-07",
+      "targetKm": 62,
+      "longKm": 20,
+      "longNote": null,
+      "keySession": "10 × 400 m at 5 km effort, 200 m jog. Treadmill or cleared track.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w25-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "9 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 9
+        },
+        {
+          "id": "w25-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "10 × 400 m at 5 km effort, 200 m jog. Treadmill or cleared track.",
+          "km": 13
+        },
+        {
+          "id": "w25-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "8 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 8
+        },
+        {
+          "id": "w25-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "8 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 8
+        },
+        {
+          "id": "w25-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w25-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "20 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 20
+        },
+        {
+          "id": "w25-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 26,
+      "phase": "P2",
+      "start": "2027-02-08",
+      "end": "2027-02-14",
+      "targetKm": 50,
+      "longKm": 17,
+      "longNote": null,
+      "keySession": "Down week: 2 × 12 min at threshold.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w26-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w26-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 2 × 12 min at threshold.",
+          "km": 13
+        },
+        {
+          "id": "w26-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "5 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 5
+        },
+        {
+          "id": "w26-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "5 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 5
+        },
+        {
+          "id": "w26-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w26-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "17 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 17
+        },
+        {
+          "id": "w26-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 27,
+      "phase": "P2",
+      "start": "2027-02-15",
+      "end": "2027-02-21",
+      "targetKm": 64,
+      "longKm": 21,
+      "longNote": null,
+      "keySession": "5 × 6 min at threshold, 90 s jog + 6 strides.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w27-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "9 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 9
+        },
+        {
+          "id": "w27-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 6 min at threshold, 90 s jog + 6 strides.",
+          "km": 13
+        },
+        {
+          "id": "w27-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "8 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 8
+        },
+        {
+          "id": "w27-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "8 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 8
+        },
+        {
+          "id": "w27-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w27-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "21 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 21
+        },
+        {
+          "id": "w27-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 28,
+      "phase": "P2",
+      "start": "2027-02-22",
+      "end": "2027-02-28",
+      "targetKm": 55,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "TEST: 10 km time trial or race. Update paces; this predicts your half.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": true,
+      "sessions": [
+        {
+          "id": "w28-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w28-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "TEST: 10 km time trial or race. Update paces; this predicts your half.",
+          "km": 13
+        },
+        {
+          "id": "w28-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w28-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w28-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w28-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w28-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 29,
+      "phase": "P3",
+      "start": "2027-03-01",
+      "end": "2027-03-07",
+      "targetKm": 62,
+      "longKm": 20,
+      "longNote": null,
+      "keySession": "5 × 3 min at 5 km effort, 2:30 jog. VO2 work starts here.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w29-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w29-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 3 min at 5 km effort, 2:30 jog. VO2 work starts here.",
+          "km": 14
+        },
+        {
+          "id": "w29-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w29-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w29-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w29-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "20 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 20
+        },
+        {
+          "id": "w29-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "6 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 6
+        }
+      ]
+    },
+    {
+      "week": 30,
+      "phase": "P3",
+      "start": "2027-03-08",
+      "end": "2027-03-14",
+      "targetKm": 66,
+      "longKm": 22,
+      "longNote": null,
+      "keySession": "6 × 3 min at 5 km effort, 2 min jog.",
+      "secondQuality": "8 km at goal half pace inside an easy run.",
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w30-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w30-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "6 × 3 min at 5 km effort, 2 min jog.",
+          "km": 14
+        },
+        {
+          "id": "w30-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w30-3",
+          "day": "Thu",
+          "kind": "key2",
+          "title": "Second quality",
+          "detail": "8 km at goal half pace inside an easy run.",
+          "km": 13
+        },
+        {
+          "id": "w30-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w30-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "22 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 22
+        },
+        {
+          "id": "w30-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "5 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 5
+        }
+      ]
+    },
+    {
+      "week": 31,
+      "phase": "P3",
+      "start": "2027-03-15",
+      "end": "2027-03-21",
+      "targetKm": 55,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "Down week: 4 × 4 min at 5 km effort, 3 min jog.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w31-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w31-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 4 × 4 min at 5 km effort, 3 min jog.",
+          "km": 14
+        },
+        {
+          "id": "w31-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w31-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w31-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w31-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w31-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 32,
+      "phase": "P3",
+      "start": "2027-03-22",
+      "end": "2027-03-28",
+      "targetKm": 68,
+      "longKm": 22,
+      "longNote": null,
+      "keySession": "5 × 1000 m at 5 km effort, 2:30 jog.",
+      "secondQuality": "10 km at goal half pace.",
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w32-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w32-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 1000 m at 5 km effort, 2:30 jog.",
+          "km": 14
+        },
+        {
+          "id": "w32-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w32-3",
+          "day": "Thu",
+          "kind": "key2",
+          "title": "Second quality",
+          "detail": "10 km at goal half pace.",
+          "km": 13
+        },
+        {
+          "id": "w32-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w32-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "22 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 22
+        },
+        {
+          "id": "w32-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "6 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 6
+        }
+      ]
+    },
+    {
+      "week": 33,
+      "phase": "P3",
+      "start": "2027-03-29",
+      "end": "2027-04-04",
+      "targetKm": 58,
+      "longKm": 19,
+      "longNote": null,
+      "keySession": "5 km race, or 6 × 3 min at 5 km effort if there is nothing to race.",
+      "secondQuality": "12 km at goal half pace, controlled.",
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w33-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "6 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 6
+        },
+        {
+          "id": "w33-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 km race, or 6 × 3 min at 5 km effort if there is nothing to race.",
+          "km": 14
+        },
+        {
+          "id": "w33-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w33-3",
+          "day": "Thu",
+          "kind": "key2",
+          "title": "Second quality",
+          "detail": "12 km at goal half pace, controlled.",
+          "km": 13
+        },
+        {
+          "id": "w33-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w33-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "19 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 19
+        },
+        {
+          "id": "w33-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Rest + floorball",
+          "detail": "Off running. Floorball 17–18 if the weekend allows it.",
+          "km": 0
+        }
+      ]
+    },
+    {
+      "week": 34,
+      "phase": "P3",
+      "start": "2027-04-05",
+      "end": "2027-04-11",
+      "targetKm": 70,
+      "longKm": 24,
+      "longNote": null,
+      "keySession": "6 × 1000 m at 10 km effort, 2 min jog.",
+      "secondQuality": "3 × 4 km at goal half pace, 3 min float.",
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w34-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w34-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "6 × 1000 m at 10 km effort, 2 min jog.",
+          "km": 14
+        },
+        {
+          "id": "w34-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w34-3",
+          "day": "Thu",
+          "kind": "key2",
+          "title": "Second quality",
+          "detail": "3 × 4 km at goal half pace, 3 min float.",
+          "km": 13
+        },
+        {
+          "id": "w34-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w34-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "24 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 24
+        },
+        {
+          "id": "w34-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "6 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 6
+        }
+      ]
+    },
+    {
+      "week": 35,
+      "phase": "P3",
+      "start": "2027-04-12",
+      "end": "2027-04-18",
+      "targetKm": 72,
+      "longKm": 22,
+      "longNote": "22 km with the final 12 km at goal half pace. The session that tells you whether 1:20 is on.",
+      "keySession": "4 × 5 min at 5–10 km effort, 3 min jog. The long run carries goal pace this week.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w35-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "11 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 11
+        },
+        {
+          "id": "w35-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "4 × 5 min at 5–10 km effort, 3 min jog. The long run carries goal pace this week.",
+          "km": 14
+        },
+        {
+          "id": "w35-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "9 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 9
+        },
+        {
+          "id": "w35-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "9 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 9
+        },
+        {
+          "id": "w35-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w35-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "22 km with the final 12 km at goal half pace. The session that tells you whether 1:20 is on. If the game is Saturday, move this to Sunday morning.",
+          "km": 22
+        },
+        {
+          "id": "w35-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "7 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 7
+        }
+      ]
+    },
+    {
+      "week": 36,
+      "phase": "P3",
+      "start": "2027-04-19",
+      "end": "2027-04-25",
+      "targetKm": 58,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "Down week: 10 km race, or 8 × 400 m at 5 km effort if no race available.",
+      "secondQuality": null,
+      "isDownWeek": true,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w36-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "8 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 8
+        },
+        {
+          "id": "w36-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Down week: 10 km race, or 8 × 400 m at 5 km effort if no race available.",
+          "km": 14
+        },
+        {
+          "id": "w36-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "7 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 7
+        },
+        {
+          "id": "w36-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "7 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 7
+        },
+        {
+          "id": "w36-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w36-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w36-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "4 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 4
+        }
+      ]
+    },
+    {
+      "week": 37,
+      "phase": "P4",
+      "start": "2027-04-26",
+      "end": "2027-05-02",
+      "targetKm": 70,
+      "longKm": 22,
+      "longNote": "22 km including 3 × 5 km at goal pace, 3 min float. Peak specific session of the whole build.",
+      "keySession": "5 × 3 min at 5 km effort, 2 min jog. Keep this light — Saturday is the big one.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w37-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "10 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 10
+        },
+        {
+          "id": "w37-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "5 × 3 min at 5 km effort, 2 min jog. Keep this light — Saturday is the big one.",
+          "km": 14
+        },
+        {
+          "id": "w37-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "9 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 9
+        },
+        {
+          "id": "w37-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "9 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 9
+        },
+        {
+          "id": "w37-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w37-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "22 km including 3 × 5 km at goal pace, 3 min float. Peak specific session of the whole build. If the game is Saturday, move this to Sunday morning.",
+          "km": 22
+        },
+        {
+          "id": "w37-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "6 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 6
+        }
+      ]
+    },
+    {
+      "week": 38,
+      "phase": "P4",
+      "start": "2027-05-03",
+      "end": "2027-05-09",
+      "targetKm": 66,
+      "longKm": 18,
+      "longNote": null,
+      "keySession": "Last real session: 5 × 1 km at 10 km effort, 2 min jog. Volume starts dropping.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w38-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "10 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 10
+        },
+        {
+          "id": "w38-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Last real session: 5 × 1 km at 10 km effort, 2 min jog. Volume starts dropping.",
+          "km": 14
+        },
+        {
+          "id": "w38-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "9 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 9
+        },
+        {
+          "id": "w38-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "9 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 9
+        },
+        {
+          "id": "w38-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w38-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "18 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 18
+        },
+        {
+          "id": "w38-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "6 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 6
+        }
+      ]
+    },
+    {
+      "week": 39,
+      "phase": "P4",
+      "start": "2027-05-10",
+      "end": "2027-05-16",
+      "targetKm": 50,
+      "longKm": 14,
+      "longNote": null,
+      "keySession": "Taper: 4 × 3 min at 5 km effort, 3 min jog. Volume down about 30%.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w39-0",
+          "day": "Mon",
+          "kind": "strength",
+          "title": "Strength A + easy run",
+          "detail": "7 km easy. Then heavy lower body. If Sunday was a game plus floorball, make this a rest day.",
+          "km": 7
+        },
+        {
+          "id": "w39-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Key session",
+          "detail": "Taper: 4 × 3 min at 5 km effort, 3 min jog. Volume down about 30%.",
+          "km": 14
+        },
+        {
+          "id": "w39-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy + cadence",
+          "detail": "6 km easy. Include 2 × 10 min at target cadence. Hockey practice in the evening, so keep it honest.",
+          "km": 6
+        },
+        {
+          "id": "w39-3",
+          "day": "Thu",
+          "kind": "strength",
+          "title": "Strength B + strides",
+          "detail": "6 km easy. Add 6 × 20 s strides, then calves, hops and single-leg work.",
+          "km": 6
+        },
+        {
+          "id": "w39-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 4 km very easy. If the hockey game is Friday night, no running.",
+          "km": 0
+        },
+        {
+          "id": "w39-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "Long run",
+          "detail": "14 km. Easy throughout, last 2 km can lift slightly. If the game is Saturday, move this to Sunday morning.",
+          "km": 14
+        },
+        {
+          "id": "w39-6",
+          "day": "Sun",
+          "kind": "easy",
+          "title": "Easy + floorball",
+          "detail": "3 km easy. Floorball 17–18 — skip it if you played a game today.",
+          "km": 3
+        }
+      ]
+    },
+    {
+      "week": 40,
+      "phase": "P4",
+      "start": "2027-05-17",
+      "end": "2027-05-23",
+      "targetKm": 49,
+      "longKm": 21.1,
+      "longNote": null,
+      "keySession": "Race week: Tue 3 × 1 km at goal pace · Thu 4 × 200 m fast · Sat 22 May, race.",
+      "secondQuality": null,
+      "isDownWeek": false,
+      "isTestWeek": false,
+      "sessions": [
+        {
+          "id": "w40-0",
+          "day": "Mon",
+          "kind": "easy",
+          "title": "Shakeout",
+          "detail": "5 km very easy. Legs should feel underused all week — that is correct.",
+          "km": 5
+        },
+        {
+          "id": "w40-1",
+          "day": "Tue",
+          "kind": "key",
+          "title": "Race rehearsal",
+          "detail": "3 × 1 km at goal pace, 3 min jog. Shoes, kit and breakfast exactly as Saturday.",
+          "km": 8
+        },
+        {
+          "id": "w40-2",
+          "day": "Wed",
+          "kind": "easy",
+          "title": "Easy",
+          "detail": "6 km easy, nothing else.",
+          "km": 6
+        },
+        {
+          "id": "w40-3",
+          "day": "Thu",
+          "kind": "key2",
+          "title": "Touch of speed",
+          "detail": "4 × 200 m fast and relaxed, full recovery. Wakes the legs up without costing anything.",
+          "km": 6
+        },
+        {
+          "id": "w40-4",
+          "day": "Fri",
+          "kind": "rest",
+          "title": "Rest or shakeout",
+          "detail": "Off, or 3 km with 3 strides. Stay off your feet otherwise.",
+          "km": 3
+        },
+        {
+          "id": "w40-5",
+          "day": "Sat",
+          "kind": "long",
+          "title": "RACE — half marathon",
+          "detail": "21.1 km. First 5 km at goal pace minus 2 s/km, hold to 16 km, then spend whatever is left.",
+          "km": 21.1
+        },
+        {
+          "id": "w40-6",
+          "day": "Sun",
+          "kind": "rest",
+          "title": "Done",
+          "detail": "Nothing. Forty weeks, one line in the ledger.",
+          "km": 0
+        }
+      ]
+    }
+  ]
+}
