@@ -4,7 +4,7 @@
 "use strict";
 
 import { $, esc, paint } from "./dom.js";
-import { store, painColor, painWord } from "./store.js";
+import { store, painColor, painWord, installFlushHandlers } from "./store.js";
 import {
   loadPlan, fmtD, fmtWD, phaseOf, currentWeekIndex, daysToRace,
   targetFor, round1, PHASE_COLOR
@@ -195,6 +195,11 @@ function wireTabs(){
    Boot
    ============================================================ */
 async function boot(){
+  /* The log comes off disk before anything renders, so the first paint
+     already shows what was logged rather than flashing an empty week. */
+  store.load();
+  installFlushHandlers();
+
   try{
     app.plan = await loadPlan();
   } catch (err){
