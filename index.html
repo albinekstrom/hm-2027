@@ -19,7 +19,12 @@
 
 <header class="head">
   <div class="wrap">
-    <p class="eyebrow">40-week build · Stockholm · Aug 2026 – May 2027</p>
+    <div class="headtop">
+      <p class="eyebrow">40-week build · Stockholm · Aug 2026 – May 2027</p>
+      <button class="syncdot" id="sync-indicator" type="button" aria-live="polite">
+        <i></i><span id="sync-label">Local only</span>
+      </button>
+    </div>
     <h1>Half marathon, 22 May 2027<br><span>Target 1:20 · shins first</span></h1>
     <div class="gauges">
       <div class="gauge">
@@ -91,6 +96,54 @@
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<dialog id="settings" aria-labelledby="settings-title">
+  <form method="dialog" id="settings-form">
+    <h2 id="settings-title">Sync</h2>
+    <p class="dlgnote">
+      Optional. Everything works without this — the log lives on this device either way.
+      Fill it in and the log also travels between your phone and your laptop through your
+      private data repo.
+    </p>
+
+    <label class="field">
+      <span class="fieldlab always">GitHub username</span>
+      <input type="text" id="set-user" autocomplete="off" autocapitalize="none"
+             spellcheck="false" inputmode="text" placeholder="your-github-name">
+    </label>
+
+    <label class="field">
+      <span class="fieldlab always">Data repo (private)</span>
+      <input type="text" id="set-repo" autocomplete="off" autocapitalize="none"
+             spellcheck="false" placeholder="hm-2027-data">
+    </label>
+
+    <label class="field">
+      <span class="fieldlab always">Fine-grained token</span>
+      <input type="password" id="set-token" autocomplete="off" autocapitalize="none"
+             spellcheck="false" placeholder="github_pat_…">
+      <span class="fieldhint" id="set-token-state"></span>
+    </label>
+
+    <p class="dlgnote small">
+      Create it with access to <b>that one repo only</b>, Repository permissions →
+      <b>Contents: Read and write</b>, nothing else, 90-day expiry.
+      If this token leaks, the worst case is somebody reads or edits your training log.
+    </p>
+
+    <div id="settings-result" class="dlgresult" role="status" aria-live="polite"></div>
+
+    <div class="dlgrow">
+      <button class="btn" id="set-save" value="save" type="submit">Save</button>
+      <button class="btn ghost" id="set-test" value="test" type="button">Test connection</button>
+      <button class="btn ghost" id="set-sync" value="sync" type="button">Sync now</button>
+    </div>
+    <div class="dlgrow">
+      <button class="btn danger" id="set-forget" value="forget" type="button">Forget token on this device</button>
+      <button class="btn ghost" id="set-close" value="close" type="button">Close</button>
+    </div>
+  </form>
+</dialog>
 
 <script type="module" src="js/app.js"></script>
 </body>

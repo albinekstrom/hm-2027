@@ -6,6 +6,7 @@
 import { esc, paint, toast } from "../dom.js";
 import { store, painColor } from "../store.js";
 import { fmtD, phaseOf, currentWeekIndex, PHASE_COLOR } from "../plan.js";
+import { isConfigured } from "../sync.js";
 
 export function renderSeason(ctx){
   const { plan } = ctx;
@@ -128,7 +129,13 @@ function wireLogCard(panel, ctx){
   });
 
   panel.querySelector("#reset-logs").addEventListener("click", () => {
-    if(!window.confirm("Clear all logged data? The plan stays, your log does not.")) return;
+    /* If sync is on, clearing is not local — it replaces log.json in the repo,
+       and the other device will pick that up. Say so before, not after. */
+    const question = isConfigured()
+      ? "Clear all logged data on this device AND in your data repo? " +
+        "Your other devices will pick up the empty log. The plan stays, your log does not."
+      : "Clear all logged data? The plan stays, your log does not.";
+    if(!window.confirm(question)) return;
     store.clearAll();
     ctx.refresh();
     toast("Logs cleared");

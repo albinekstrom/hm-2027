@@ -18,7 +18,7 @@
 "use strict";
 
 /* Bump on deploy. Old caches are deleted on activate. */
-const CACHE = "hm2027-shell-v4";
+const CACHE = "hm2027-shell-v5";
 
 const SHELL = [
   "./",
@@ -28,6 +28,7 @@ const SHELL = [
   "js/dom.js",
   "js/plan.js",
   "js/store.js",
+  "js/sync.js",
   "js/paces.js",
   "js/views/week.js",
   "js/views/season.js",

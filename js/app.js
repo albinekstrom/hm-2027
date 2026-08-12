@@ -9,6 +9,7 @@ import {
   loadPlan, fmtD, fmtWD, phaseOf, currentWeekIndex, daysToRace,
   targetFor, round1, PHASE_COLOR
 } from "./plan.js";
+import { sync, loadSettings, saveSettings, forgetToken, maskToken, isConfigured } from "./sync.js";
 import { renderWeek } from "./views/week.js";
 import { renderSeason } from "./views/season.js";
 import { renderPaces } from "./views/paces.js";
@@ -154,6 +155,189 @@ function renderGauges(){
 }
 
 /* ============================================================
+   Sync indicator — one small element, four states, no toast
+   ============================================================ */
+function renderSyncIndicator(){
+  const dot = $("sync-indicator");
+  const label = $("sync-label");
+  dot.dataset.state = sync.state;
+
+  let text;
+  let title;
+  switch(sync.state){
+    case "syncing":
+      text = "Syncing";
+      title = "Talking to your data repo";
+      break;
+    case "synced":
+      text = "Synced " + relativeTime(sync.lastSyncedAt);
+      title = "Last synced " + new Date(sync.lastSyncedAt).toLocaleString();
+      break;
+    case "offline":
+      text = "Offline";
+      title = "No network. Your data is safe on this device and will sync when you are back.";
+      break;
+    case "failed":
+      text = "Not synced";
+      title = "Not synced — your data is safe on this device. " + (sync.lastError || "");
+      break;
+    case "idle":
+      text = sync.lastSyncedAt ? "Synced " + relativeTime(sync.lastSyncedAt) : "Sync ready";
+      title = "Sync is configured";
+      break;
+    default:
+      text = "Local only";
+      title = "No token on this device. Everything works; nothing leaves the phone.";
+  }
+  label.textContent = text;
+  dot.title = title;
+  dot.setAttribute("aria-label", "Sync status: " + text + ". Opens sync settings.");
+}
+
+function relativeTime(iso){
+  if(!iso) return "";
+  const seconds = Math.max(0, Math.round((Date.now() - Date.parse(iso)) / 1000));
+  if(seconds < 45) return "just now";
+  if(seconds < 90) return "1 min ago";
+  const minutes = Math.round(seconds / 60);
+  if(minutes < 60) return minutes + " min ago";
+  const hours = Math.round(minutes / 60);
+  if(hours < 24) return hours + (hours === 1 ? " hour ago" : " hours ago");
+  const days = Math.round(hours / 24);
+  return days + (days === 1 ? " day ago" : " days ago");
+}
+
+/* "week 12, Tue" for the commit subject. */
+function commitLabel(){
+  let bestKey = null;
+  let bestId = null;
+  let bestTime = -1;
+  const weeks = store.state.weeks;
+  for(const key in weeks){
+    const sessions = weeks[key].sessions;
+    for(const id in sessions){
+      const t = Date.parse(sessions[id].updatedAt || "");
+      if(isFinite(t) && t > bestTime){
+        bestTime = t;
+        bestKey = key;
+        bestId = id;
+      }
+    }
+  }
+  if(bestKey === null) return "";
+  const week = app.plan && app.plan.weeks[Number(bestKey)];
+  if(!week) return "week " + (Number(bestKey) + 1);
+  const travel = store.isTravel(Number(bestKey));
+  const list = travel ? app.plan.travelWeekSessions : week.sessions;
+  const session = list.find(s => s.id === bestId);
+  return "week " + week.week + (session ? ", " + session.day : "");
+}
+
+/* ============================================================
+   Settings panel
+   ============================================================ */
+function wireSettings(){
+  const dialog = $("settings");
+  const user = $("set-user");
+  const repo = $("set-repo");
+  const token = $("set-token");
+  const tokenState = $("set-token-state");
+  const result = $("settings-result");
+
+  const say = (message, kind) => {
+    result.textContent = message || "";
+    result.className = "dlgresult" + (kind ? " " + kind : "");
+  };
+
+  const fill = () => {
+    const settings = loadSettings();
+    user.value = settings.user;
+    repo.value = settings.repo;
+    token.value = "";
+    if(settings.token){
+      token.placeholder = "•••• stored on this device";
+      tokenState.textContent = "Stored: " + maskToken(settings.token) +
+                               " — leave blank to keep it.";
+    } else {
+      token.placeholder = "github_pat_…";
+      tokenState.textContent = "No token on this device.";
+    }
+    say("");
+  };
+
+  const collect = () => {
+    const existing = loadSettings();
+    return {
+      user: user.value.trim(),
+      repo: repo.value.trim() || "hm-2027-data",
+      /* Blank means "keep what is stored", so re-saving a username does
+         not silently wipe the token. */
+      token: token.value.trim() || existing.token
+    };
+  };
+
+  $("sync-indicator").addEventListener("click", () => {
+    fill();
+    dialog.showModal();
+  });
+
+  $("settings-form").addEventListener("submit", event => {
+    event.preventDefault();
+    const settings = saveSettings(collect());
+    renderSyncIndicator();
+    if(isConfigured(settings)){
+      say("Saved. Syncing now…", "ok");
+      sync.run("settings-saved").then(() => {
+        say(sync.state === "synced" ? "Synced." : (sync.lastError || "Not synced yet."),
+            sync.state === "synced" ? "ok" : "bad");
+        fillTokenState();
+      });
+    } else {
+      say("Saved. Sync is off until all three are filled in.", "");
+    }
+  });
+
+  const fillTokenState = () => {
+    const settings = loadSettings();
+    tokenState.textContent = settings.token
+      ? "Stored: " + maskToken(settings.token) + " — leave blank to keep it."
+      : "No token on this device.";
+  };
+
+  $("set-test").addEventListener("click", async () => {
+    const settings = collect();
+    if(!settings.user || !settings.repo || !settings.token){
+      say("Fill in all three first.", "bad");
+      return;
+    }
+    say("Checking…");
+    const outcome = await sync.test(settings);
+    say(outcome.ok ? outcome.note : outcome.error, outcome.ok ? "ok" : "bad");
+  });
+
+  $("set-sync").addEventListener("click", async () => {
+    if(!isConfigured(sync.settings)){
+      say("Save your username, repo and token first.", "bad");
+      return;
+    }
+    say("Syncing…");
+    await sync.run("manual");
+    say(sync.state === "synced" ? "Synced." : (sync.lastError || "Not synced."),
+        sync.state === "synced" ? "ok" : "bad");
+  });
+
+  $("set-forget").addEventListener("click", () => {
+    if(!window.confirm("Forget the token on this device? Your log stays; it just stops syncing.")) return;
+    forgetToken();
+    fill();
+    renderSyncIndicator();
+    say("Token forgotten on this device.", "ok");
+  });
+
+  $("set-close").addEventListener("click", () => dialog.close());
+}
+
+/* ============================================================
    Tabs
    ============================================================ */
 function switchTab(name){
@@ -214,9 +398,24 @@ async function boot(){
   app.index = current < 0 ? 0 : current;
 
   wireTabs();
+  wireSettings();
   renderLedger();
   renderGauges();
   switchTab("week");
+
+  /* Sync redraws the indicator on every state change, and the whole view
+     when a merge brings something down from another device. */
+  sync.onChange = renderSyncIndicator;
+  sync.onApplied = () => ctx.refresh();
+  sync.commitLabel = commitLabel;
+  sync.init();
+  renderSyncIndicator();
+  if(isConfigured(sync.settings)) sync.run("load");
+
+  /* Keep "synced 3 min ago" honest without polling the network. */
+  setInterval(() => {
+    if(sync.state === "synced" || sync.state === "idle") renderSyncIndicator();
+  }, 30000);
 
   /* Bring the selected week into view in the ledger without yanking the page. */
   const bar = $("strip").children[app.index];

@@ -30,9 +30,19 @@ Settings → Developer settings → Personal access tokens → **Fine-grained to
 - **Expiration:** 90 days. Set a calendar reminder; you will need to make a new one three times
   across this build.
 
-Then open the site → Settings, and paste in your GitHub username, the data repo name
-(`hm-2027-data`) and the token. It is stored in `localStorage` on that device only, shown masked
-after entry, and there is a "Forget token on this device" button.
+Then open the site, tap the sync chip in the top right — it reads **Local only** until this is
+done — and fill in your GitHub username, the data repo name (`hm-2027-data`) and the token.
+"Test connection" checks it without writing anything. The token is stored in `localStorage` on that
+device only, shown masked afterwards, and there is a "Forget token on this device" button. Leave
+the token field blank when re-saving and the stored one is kept.
+
+The chip has five states: **Local only** (no token here), **Syncing**, **Synced 3 min ago**,
+**Offline**, and **Not synced** — which means exactly what it says and nothing more: your data is
+on this device, and the next successful sync will carry it up.
+
+Two actions replace the repo copy instead of merging into it, because merging would silently undo
+them: **Clear all my logs** and **Import**. Everything else merges per session and per field, so
+two devices editing the same week both keep their edits.
 
 If this token leaks, the worst case is somebody reads or edits your training log.
 
