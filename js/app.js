@@ -223,6 +223,22 @@ async function boot(){
   if(bar && bar.scrollIntoView){
     bar.scrollIntoView({ block:"nearest", inline:"center" });
   }
+
+  registerServiceWorker();
+}
+
+/* The offline shell. Registered after the first render so it never
+   competes with the plan for the first paint, and skipped entirely on
+   file:// where it cannot work. */
+function registerServiceWorker(){
+  if(!("serviceWorker" in navigator)) return;
+  const secure = location.protocol === "https:" ||
+                 location.hostname === "localhost" ||
+                 location.hostname === "127.0.0.1";
+  if(!secure) return;
+  navigator.serviceWorker.register("sw.js").catch(err => {
+    console.warn("service worker did not register — " + err.message);
+  });
 }
 
 boot();
